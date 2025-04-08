@@ -23,7 +23,7 @@ Jag har skapat ett tärningspel byggt på **JavaScript**, **HTML** och **CSS**. 
 ### 1. Gå till GitHub
 
 1. Gå till GitHub-sidan för detta projekt: [java24-js-i1-Maryam-Rasouli](https://github.com/MaryamRasouli526/java24-js-i1-Maryam-Rasouli).
-2. Klicka på den gröna knappen **Code** och kopiera URL:en som visas (https://github.com/MH-GRIT/fulk-pings-bibliotek-MaryamRasouli526).
+2. Klicka på den gröna knappen **Code** och kopiera URL:en som visas (https://github.com/MaryamRasouli526/java24-js-i1-Maryam-Rasouli.git).
 
 ### 2. **Öppna en terminal (Kommandoprompt eller Git Bash):**
 Om du inte har Git installerat, kan du ladda ner det från [Git's officiella webbplats](https://git-scm.com/downloads).
