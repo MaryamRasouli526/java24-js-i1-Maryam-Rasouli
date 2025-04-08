@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Nedan har jag hämtat en typsnitt-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./js/game.js" defer></script> 
+
+    
+    <title>Pig - tärningsspel</title><!--Titel längst i sidans flik-->
+</head>
+<body>
+
+    <h1>Pig - tärningsspel</h1> <!--Titel på själva sidan-->
+
+    <div class="instructions-container"> <!--Container där instuktionerna till pig står-->
+        <h2>Pig - hur du spelar</h2>
+            <p>
+                Spelet går ut på att nå 100 poäng genom att kasta en tärning i så få omgångar som möjligt. 
+
+                Vid varje omgång får spelaren kasta tärningen så många gånger spelaren vill. Omgången tar slut när spelaren väljer att frysa sina poäng eller när spelaren slår en etta. 
+
+                Varje gång tärningen slås läggs tärningens nummer till omgångens poäng. När spelaren väljer att frysa poängen läggs omgångens poäng till den totala poängen. 
+
+                Slår spelaren däremot en etta tar omgången slut och omgångens poäng blir noll. Slår man en etta ändras alltså inte den totala poängen. 
+
+                När spelarens totala poäng når minst hundra vinner spelaren.
+
+            </p>
+
+        <h3>Läs punkterna nedan innan du börjar:</h3>
+        
+        <!--Lista på punkterna att läsa innan spelaren början. Den år oordnad-->
+        <ul>
+            <li>Börja med att skriva namn i inputfältet annars får du felmeddelande när du kastar eller fryser poäng.</li>
+            <li>Kasta tärningen - och kolla hur mycket omgångens poäng blir. Omgången räknas upp när man fryser poängen.</li>
+            <li>Frys poängen innan du får en etta!- Om du får en etta räknas omgången upp automatiskt och omgångens poäng blir 0.</li>
+            <li>Klicka på Spela igen - När du har fått över 100 poäng så kommer du kunna klicka på en knapp för att spela igen.</li>
+            <li>Kom ihåg att skriva namn - Du kommer behöve skriva ditt namn igen om du ska spela igen.</li>
+            
+        </ul>
+
+        
+
+    </div>
+
+    <!--I diven nedan visas namnet som kommer att skrivas in i formet-->
+    <div id="name-display"></div> 
+
+    <!--Här är ett form-container där namnet skrivs in och skickas in genom knapptryck-->
+    <form class = form-container>
+        <label for="name">Ditt namn:</label>
+        <input type="text" id="name" placeholder="Skriv ditt namn" required>
+        <button id="show-name-button" type="submit">Visa</button>
+
+    </form>
+
+    <!--Divar för poäng och omgång-->
+    <div id="total-score">Total Poäng: 0</div>
+    <div id="round-score">Omgångens Poäng: 0</div>
+    <div id="round-number">Omgång: 1</div>
+
+    <button id="roll-button">Kasta Tärning</button>
+    <button id="freeze-button">Frys Poäng</button>
+    <button id="play-again-button" class="hidden">Spela Igen</button>
+
+
+    <!--Här är div klasser som representerar tärningens 6 sidor. I klasserna finns divar som representerar antal prickar de olika sidorna har-->
+    <div class="die one">
+        <div></div>
+    </div>
+    <div class="die two">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="die three">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="die four">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="die five">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="die six">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </div>
+
+    <!--Här skriv meddelande om resultat efter man når 100 poäng-->
+    <div id="game-message"></div>
+
+    <!--Nedan är det en div som används för popupmeddelande. -->
+    <!--Om spelarna glömmer att skriva ett namn och klickar på knapparna kommer ett meddelande att poppa upp. Detta hanteras då i javascript-->
+    <div id="popup" class="popup hidden">
+        <p id="popup-message"></p>
+    </div>
+      
+    
+
+</body>
+</html>

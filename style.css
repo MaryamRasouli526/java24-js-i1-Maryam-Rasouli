@@ -1,0 +1,280 @@
+/* Globala standarder*/
+* {
+    margin: 0; /* Tar bort marginal */
+    padding: 0; /* Tar bort inre utfyllnad */
+    border: 0; /* Tar bort standardramar */
+    outline: 0; /* Tar bort fokusramar */
+    box-sizing: border-box; /* Inkluderar padding och border i elementets totala storlek */
+}
+
+/* Grundläggande layout */
+body {
+    padding: 5%; /* Ger lite utrymme runt hela sidan */
+    display: flex; /* Använder flexbox för layout */
+    flex-flow: row wrap; /* Radlayout som också tillåter radbrytning */
+    justify-content: space-around; /* Fördelar innehållet jämt med luft mellan */
+    background-image: url('images/square.jpg'); /* Sätter bakgrundsbild */
+    background-size: cover; /* Gör så att bilden täcker hela ytan */
+    background-position: center; /* Centrerar bakgrundsbilden */
+    font-family: 'Poppins', sans-serif; /* Väljer typsnitt Poppins */
+    color: #ffffff; /* Vit textfärg som standard */
+}
+
+.hidden {
+    display: none; /* Gömmer elementet från visning */
+}
+
+/* Rubriker */
+h1 {
+    color: white; /* Vit färg på huvudrubrik */
+    display: block; /* Visas som block */
+    width: 100%; /* Tar upp hela bredden */
+    margin-bottom: 20px; /* Avstånd under rubriken */
+    text-align: center; /* Centrerad text */
+}
+
+h3 {
+    margin-top: 20px; /* Avstånd ovanför h3-rubriker */
+}
+
+/* Formulär */
+input {
+    width: 100%; /* Tar upp hela bredden */
+    max-width: 300px; /* Maxbredd på 300px */
+    padding: 10px 12px; /* Inre marginal */
+    border: 2px solid #ff4d4d; /* Röd kantlinje */
+    border-radius: 25px; /* Rundade hörn */
+    font-size: 16px; /* Storlek på texten */
+    outline: none; /* Ingen blå markering vid fokus */
+    background-color: #fff0f0; /* Ljus rosa bakgrund */
+    color: #660000; /* Mörkröd textfärg */
+    box-shadow: 0 2px 5px rgba(255, 77, 77, 0.3); /* Lätt röd skugga */
+    transition: all 0.3s ease; /* Mjuk övergång */
+    margin-bottom: 12px; /* Avstånd under varje inputfält */
+}
+
+input:focus {
+    border-color: #ff1a1a; /* Intensivare röd vid fokus */
+    box-shadow: 0 0 8px 2px rgba(255, 26, 26, 0.6); /* Lysande röd skugga */
+    background-color: #ffe6e6; /* Lite ljusare bakgrund vid fokus */
+}
+
+.form-container, .instructions-container, #name-display {
+    width: 100%; /* Full bredd */
+    left: 50%; /* Centrering i förhållande till vänster kant */
+    background: #2fc11298; /* Grönaktig bakgrund med transparens */
+    padding: 20px; /* Inre marginal */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lätt skugga */
+    border-radius: 10px; /* Rundade hörn */
+    margin-bottom: 20px; /* Avstånd under komponent */
+    margin-left: 20px; /* Liten vänstermarginal */
+}
+
+#name-display {
+    margin-left: 20px; /* Avstånd till vänster från övriga knappar */
+}
+
+/* Knappar*/
+button {
+    display: inline-block; /* Visas inline men kan ha egna dimensioner */
+    padding: 10px 20px; /* Inre utrymme i knapp */
+    background-color: rgba(152, 13, 13, 0.852); /* Rödaktig färg med transparens */
+    border-radius: 10px; /* Rundade hörn */
+    color: white; /* Vit textfärg */
+    border: none; /* Ingen kant */
+    cursor: pointer; /* Ändrar pekare till hand */
+    font-size: 16px; /* Textstorlek */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Skugga runt knappen */
+    transition: all 0.3s ease; /* Mjuk animation vid hover */
+}
+
+button:hover {
+    background-color: #3d0a06; /* Mörkröd hover-effekt */
+    transform: scale(1.1); /* Gör knappen större vid hover */
+}
+
+#roll-button, #freeze-button, #play-again-button {
+    background-color: #2d841c; /* Grön färg för specifika knappar som för att kasta, frysa poäng och för att spela igen */
+}
+
+/* Instruktioner i spelet */
+.instructions-container ul {
+    list-style-type: none; /* Tar bort standardpunkter */
+    padding: 0; /* Ingen inre marginal */
+}
+
+.instructions-container li::before {
+    content: "•"; /* Visar en punkt före varje list-element */
+    color: #f9fafc; /* Vit punkt */
+    font-size: 20px; /* Stor punkt */
+    margin-right: 10px; /* Avstånd till texten */
+}
+
+.instructions-container li:hover {
+    background: #758e65; /* Ljusgrön bakgrund vid hover */
+    transform: scale(1.02); /* Liten zoom-effekt */
+}
+
+/* Meddelande*/
+#game-message {
+    margin-top: 40px; /* Avstånd ovanför meddelandet */
+    font-size: larger; /* Lite större text */
+}
+
+/* Tärningar */
+.die {
+    padding: 1%; /* Inre marginal */
+    width: 15%; /* Bredd i procent */
+    aspect-ratio: 1/1; /* Gör den kvadratisk */
+    border-radius: 5%; /* Lite rundade hörn */
+    border: 2px solid gray; /* Grå kant */
+    box-shadow: 0 15px 6px rgba(0, 0, 0, 0.1) !important; /* Skugga */
+    background: hsl(40, 30%, 98%); /* Ljus bakgrund */
+    display: none; /* Döljer tills den behövs */
+    justify-content: center; /* Centrerar prickarna horisontellt */
+    align-items: center; /* Centrerar prickarna vertikalt */
+    position: relative; /* Nödvändigt för prickpositionering */
+}
+
+.die div {
+    background: black; /* Svarta prickar */
+    border-radius: 50%; /* Gör prickarna runda */
+    width: 25%; /* Storlek på prick */
+    aspect-ratio: 1/1; /* Behåller rund form */
+    position: absolute; /* Positioneras inuti tärningen */
+}
+
+/* Tärning 1 */
+.die.one div {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Placeras i mitten */
+}
+
+/* Tärning 2 */
+.die.two div:nth-child(1) {
+    top: 15%;
+    right: 15%;
+}
+.die.two div:nth-child(2) {
+    bottom: 15%;
+    left: 15%;
+}
+
+/* Tärning 3 */
+.die.three div:nth-child(1) {
+    top: 10%;
+    right: 15%;
+}
+.die.three div:nth-child(2) {
+    top: 40%;
+    left: 37%;
+}
+.die.three div:nth-child(3) {
+    bottom: 5%;
+    left: 15%;
+}
+
+/* Tärning 4 */
+.die.four div:nth-child(1) {
+    top: 15%;
+    left: 15%;
+}
+.die.four div:nth-child(2) {
+    top: 15%;
+    right: 15%;
+}
+.die.four div:nth-child(3) {
+    bottom: 15%;
+    left: 15%;
+}
+.die.four div:nth-child(4) {
+    bottom: 15%;
+    right: 15%;
+}
+
+/* Tärning 5 */
+.die.five div:nth-child(1) {
+    top: 15%;
+    left: 15%;
+}
+.die.five div:nth-child(2) {
+    top: 15%;
+    right: 15%;
+}
+.die.five div:nth-child(3) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.die.five div:nth-child(4) {
+    bottom: 15%;
+    left: 15%;
+}
+.die.five div:nth-child(5) {
+    bottom: 15%;
+    right: 15%;
+}
+
+/* Tärning 6 */
+.die.six div:nth-child(1) {
+    top: 10%;
+    left: 10%;
+}
+.die.six div:nth-child(2) {
+    top: 10%;
+    right: 10%;
+}
+.die.six div:nth-child(3) {
+    top: 37%;
+    left: 10%;
+}
+.die.six div:nth-child(4) {
+    top: 37%;
+    right: 10%;
+}
+.die.six div:nth-child(5) {
+    bottom: 10%;
+    left: 10%;
+}
+.die.six div:nth-child(6) {
+    bottom: 10%;
+    right: 10%;
+}
+
+/* Popup */
+.popup {
+    position: fixed; /* Stannar fast vid skärmen */
+    top: 20px; /* Placering uppifrån */
+    left: 50%; /* Centrerad horisontellt */
+    transform: translateX(-50%); /* Justerar till exakt mitt */
+    background-color: #f44336; /* Röd bakgrund */
+    color: white; /* Vit text */
+    padding: 15px 25px; /* Inre marginal */
+    border-radius: 8px; /* Rundade hörn */
+    font-size: 1.2rem; /* Stor text */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Skugga runt */
+    z-index: 9999; /* Ligger ovanpå allt annat */
+    transition: opacity 0.3s ease-in-out; /* Mjuk fading-effekt */
+}
+
+/* Animationer för tärningen att rulla/snurra */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) scale(1) translateZ(0); /* Startläge */
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Startskugga */
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1); /* Snurr och förstorad mittpunkt */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Större skugga */
+    }
+    100% {
+        transform: rotate(360deg) scale(1) translateZ(0); /* Slutläge */
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Tillbaka till normal */
+    }
+}
+
+.die.spin {
+    animation: spin 1s ease-out; /* Applicera snurr-animation */
+    animation-timing-function: ease-out; /* Mjuk avslutning */
+}
